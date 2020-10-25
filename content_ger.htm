@@ -1,0 +1,113 @@
+<html>
+
+<script language="JavaScript1.2">
+
+  scrollID=0;
+  vPos=0;
+  tour=0;
+  page=0;
+  nextPage = new Array("start_ger.htm",
+                                    "kabel/kabel_ger.htm",
+                                    "radio/radio_ger.htm",
+                                    "lenkrad/lenkrad_ger.htm",
+                                    "wechsler/wechsler_ger.htm",
+                                    "amp-einbau/amp-einbau_ger.htm",
+                                    "amp-mod/amp-mod_ger.htm",
+                                    "arma/arma_ger.htm",
+                                    "tuer/tuer_ger.htm",
+                                    "heck/heck_ger.htm",
+                                    "sub/sub_ger.htm",
+                                    "prozessor/prozessor_ger.htm",
+                                    "sonder_ger.htm");
+  pageLength = new Array(0, 14250, 12400, 2850, 300, 31350, 450, 19200, 16950, 12100, 8300, 11100, 0);
+
+  function toggleTour(reset) {
+    if(reset>=0) {
+      tour=0;
+      vPos=0;
+      page=reset;
+    }
+    else {
+      if(tour) { tour=0; }
+      else {
+        tour=1;
+        scrollIt();
+      }
+    }
+  }
+
+  function skipPage() {
+    page+=1;
+    page%=13;
+    vPos=0;
+    top.frames[3].location.replace(nextPage[page]);
+    if(page==12) scrollID=setTimeout("scrollIt()",60000);
+    else scrollID=setTimeout("scrollIt()",5000);
+  }
+
+  function scrollIt() {
+    vPos+=2;
+    if(vPos >= pageLength[page]) {
+      scrollID=setTimeout("skipPage()",2000);
+    }
+    else { 
+      top.frames[3].scrollTo(0,vPos);
+      if(tour) { scrollID=setTimeout("scrollIt()",25); }
+    }
+  }
+
+</script>
+
+  <body bgcolor="#FFFFFF" link=#000000 alink=#D00000 vlink=#808080>
+
+    &nbsp;
+    <p>
+    <h4><a href=start_ger.htm target=main onClick="javascript:toggleTour(0)">System-Präsentation</a></h4>
+    <p>
+    <a href="javascript:toggleTour(-1)">Tour starten/stoppen</a>
+    <p>
+     &nbsp;
+    <p>
+    <a href=kabel/kabel_ger.htm target=main onClick="javascript:toggleTour(1)" onMouseOver="self.status='Schutz der Kabel'">Verkabelung</a>
+    <p>
+    Signalquelle
+    <ul>
+    <li><a href=radio/radio_ger.htm target=main onClick="javascript:toggleTour(2)" onMouseOver="self.status='Integration des Alpine F#1 Steuergerätes'">Radio</a>
+    <li><a href=lenkrad/lenkrad_ger.htm target=main onClick="javascript:toggleTour(3)" onMouseOver="self.status='Steuerung des Radios über Lenkradtasten'">Multifunktionslenkrad umrüsten</a>
+    <li><a href=wechsler/wechsler_ger.htm target=main onClick="javascript:toggleTour(4)" onMouseOver="self.status='Einbau des CD-Wechslers'">Wechsler</a>
+    </ul>
+    <p>
+    Verstärker
+    <ul>
+    <li><a href=amp-einbau/amp-einbau_ger.htm target=main onClick="javascript:toggleTour(5)" onMouseOver="self.status='Einbau der Verstärker im Kofferraum'">Einbau</a>
+    <li><a href=amp-mod/amp-mod_ger.htm target=main onClick="javascript:toggleTour(6)" onMouseOver="self.status='Modifikationen an den Verstärkern'">Modifikationen</a> 
+    </ul>
+    <p>
+    Lautsprecher
+    <ul>
+    <li><a href=arma/arma_ger.htm target=main onClick="javascript:toggleTour(7)" onMouseOver="self.status='Neue Einbauöffnungen für Hoch- und Mitteltöner'">Umbau Armaturenbrett</a>
+    <li><a href=tuer/tuer_ger.htm target=main onClick="javascript:toggleTour(8)" onMouseOver="self.status='Anfertigung neuer Türverkleidungen und Einbau der Tiefmitteltöner'">neue Türverkleidungen</a>
+    <li><a href=heck/heck_ger.htm target=main onClick="javascript:toggleTour(9)" onMouseOver="self.status='Anfertigung einer neuen Heckablage'">Hecklautsprecher</a>
+    <li><a href=sub/sub_ger.htm target=main onClick="javascript:toggleTour(10)" onMouseOver="self.status='Gehäusebau und Verchromung'">Tieftönerchassis und -gehäuse</a>
+    </ul>
+    <p>
+    Andere Geräte
+    <ul>
+    <li><a href=prozessor/prozessor_ger.htm target=main onClick="javascript:toggleTour(11)" onMouseOver="self.status='Einbau auf der Heckablage'">Prozessor</a>
+    </ul>
+    <p>
+    <a href=sonder_ger.htm target=main onClick="javascript:toggleTour(12)" onMouseOver="self.status='Besonderheiten und kreative Details des Einbaus'">Besondere Details</a>
+    <p>
+    &nbsp;
+    <p>
+    &nbsp;
+    <p>
+    &nbsp;
+    <p>
+    <center>
+    <font size=+1 color=red>
+    http://listen.to/bmw
+
+  </body>
+
+</html>

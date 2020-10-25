@@ -1,0 +1,20 @@
+<html>
+
+  <script language=javascript>
+
+    function switchLang(){
+         parent.frames[0].location=parent.frames[0].location.pathname.slice(0,parent.frames[0].location.pathname.indexOf("_",1)) + ".htm";
+         parent.frames[3].location=parent.frames[3].location.pathname.slice(0,parent.frames[3].location.pathname.indexOf("_",1)) + ".htm";
+}
+
+  </script>
+
+  <body bgcolor=#FFFFFF onLoad="switchLang()">
+
+    <a href=lang_ger.htm target=lang onMouseOver="self.status='Umschalten auf Deutsch'">
+    <center>
+    <img src=deutsch2.gif border=0 align=middle><img src=deutsch1.gif border=0 align=middle></a>
+    </center>
+
+  </body>
+</html>
